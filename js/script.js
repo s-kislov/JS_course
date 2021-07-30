@@ -1,23 +1,31 @@
+/* Первая часть */
+let num = 266219;
 
-/* Первая часть домашки */
+// разбиваю на числв
+let split = num.toString().split('');
 
-let money = 20000; 
-let income = "Подбираю на улице"; 
-let addExpenses = "Шнурки, кеды, труханы"; 
-let deposit = false; 
-let mission = 1000000; 
-let period = 12;
-let budgedDay = 60000 / 30;
+console.log(split);
 
-console.log(typeof money);
-console.log(typeof income);
-console.log(typeof deposit);
+// определяем числа, с которым будем работать во время перебора массива
+let result = 1;
 
-/* Вторая часть домашки */
+console.log(result);
 
-console.log(addExpenses.length);
-console.log('Период равен ' + period + ' месяцев');
-console.log('Цель заработать ' + mission  + ' ₽');
-console.log(addExpenses.toLowerCase());
-console.log(addExpenses.split(' '));
-console.log('budgedDay: ', budgedDay);
+// сам массив перебора и умножаем число выше на результат перебора
+for (let i = 0; i < split.length; i++) {
+   
+    result *= split[i];
+
+}
+// выводим получившееся строку + число
+console.log('Произведение цифр числа ' + num + ' = ' + result);
+
+/* Вторая часть */
+// возводим в степень
+let elevate = result **3;
+
+console.log(elevate);
+
+/* Третья часть */
+// выводим первые 2 числа степени result
+console.log(elevate.toString().slice(0, 2));

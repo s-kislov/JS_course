@@ -29,3 +29,5 @@ console.log(elevate);
 /* Третья часть */
 // выводим первые 2 числа степени result
 console.log(elevate.toString().slice(0, 2));
+
+//

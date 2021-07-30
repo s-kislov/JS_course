@@ -30,4 +30,4 @@ console.log(elevate);
 // выводим первые 2 числа степени result
 console.log(elevate.toString().slice(0, 2));
 
-//
+// для новой ветки

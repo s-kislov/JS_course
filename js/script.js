@@ -20,5 +20,4 @@ console.log('Период равен ' + period + ' месяцев');
 console.log('Цель заработать ' + mission  + ' ₽');
 console.log(addExpenses.toLowerCase());
 console.log(addExpenses.split(' '));
-
 console.log('budgedDay: ', budgedDay);

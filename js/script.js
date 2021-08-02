@@ -1,23 +1,21 @@
 'use strict';
 
-let money ; 
+let money = Number(prompt('Ваш месячный доход?', 30000));
 let income = 'Подбираю на улице'; 
-let addExpenses ; 
-let deposit ; 
+let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'); 
+let deposit = confirm('У тебя есть депозит в банке?'); 
 let mission = 1000000; 
 let period = 12;
-let budgedMonth ;
-let budgedDay ;
-let expenses1 ;
-let expenses2 ;
-let amount1 ;
-let amount2 ;
+let expenses1 = prompt('Введите обязательную статью расходов?');
+let amount1 = +prompt('Во сколько ' + expenses1.toLowerCase() + ' обойдется?');
+let expenses2 = prompt('Введите обязательную статью расходов?');
+let amount2 = +prompt('Во сколько ' + expenses2.toLowerCase() + ' обойдется?');
+let budgedMonth = +money - (amount1 + amount2);
+let budgedDay = Math.floor(+budgedMonth / 30);
 let lvlBudget ;
 
 // проверяем на введенное число, если нет, уточняем вопрос, 
 // если нет, ставим ноль за юзера и выводим Алерт
-money = Number(prompt('Ваш месячный доход?', 30000));
-
 if (money) {
     isNaN(money);
 } else {
@@ -30,25 +28,7 @@ if (money) {
     }
 }
 
-// выполняем вопрос про расходы
-addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую')
-
-// запрос про депозит 
-deposit = confirm('У тебя есть депозит в банке?');
-
-// вопросы про бюджет и затраты
-expenses1 = prompt('Введите обязательную статью расходов?');
-amount1 = prompt('Во сколько ' + expenses1.toLowerCase() + ' обойдется?');
-expenses2 = prompt('Введите обязательную статью расходов?');
-amount2 = prompt('Во сколько ' + expenses2.toLowerCase() + ' обойдется?');
-
-// бюджет на месяц за минусом расходов
-budgedMonth = (Number(money) - (Number(amount1) + Number(amount2)));
-
-// бюджет на день
-budgedDay = Math.floor(+budgedMonth / 30);
-
-// проверка условий по бюджету
+// проверка условий по бюджету.
 switch (true) {
     case budgedDay > 1201 :
         lvlBudget = ' очень высоким уровнем дохода';

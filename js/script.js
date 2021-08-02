@@ -1,80 +1,44 @@
 'use strict';
 
-let money ; 
-let income = 'Подбираю на улице'; 
-let addExpenses ; 
-let deposit ; 
-let mission = 1000000; 
-let period = 12;
-let budgedMonth ;
-let budgedDay ;
-let expenses1 ;
-let expenses2 ;
-let amount1 ;
-let amount2 ;
-let lvlBudget ;
+let lang = document.getElementsByTagName("html")[0].getAttribute("lang");
+let langRu = 'Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье';
+let langEn = 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday';
+let namePerson ;
+let message ;
 
-// проверяем на введенное число, если нет, уточняем вопрос, 
-// если нет, ставим ноль за юзера и выводим Алерт
-money = Number(prompt('Ваш месячный доход?', 30000));
-
-if (money) {
-    isNaN(money);
+// if
+if (lang === 'ru') {
+    console.log(langRu);
 } else {
-    money = Number(prompt('Так какой ваш месячный доход?', 'Введите сумму числом'));
-    if (money) {
-        isNaN(money);
-    } else {
-        money = 0;
-        alert('Не можете сделать это сами, мы ввели 0 за вас :)');
-    }
+    console.log(langEn);
 }
 
-// выполняем вопрос про расходы
-addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую')
-
-// запрос про депозит 
-deposit = confirm('У тебя есть депозит в банке?');
-
-// вопросы про бюджет и затраты
-expenses1 = prompt('Введите обязательную статью расходов?');
-amount1 = prompt('Во сколько ' + expenses1.toLowerCase() + ' обойдется?');
-expenses2 = prompt('Введите обязательную статью расходов?');
-amount2 = prompt('Во сколько ' + expenses2.toLowerCase() + ' обойдется?');
-
-// бюджет на месяц за минусом расходов
-budgedMonth = (Number(money) - (Number(amount1) + Number(amount2)));
-
-// бюджет на день
-budgedDay = Math.floor(+budgedMonth / 30);
-
-// проверка условий по бюджету
+// switch-case
 switch (true) {
-    case budgedDay > 1201 :
-        lvlBudget = ' очень высоким уровнем дохода';
+    case lang === 'en':
+        console.log(langEn);
         break;
-    case 601 < budgedDay < 1200:
-        lvlBudget = ' средним уровнем дохода';
+    case lang === 'ru':
+        console.log(langRu);
         break;
-    case 0 < budgedDay < 600:
-        lvlBudget = ' низким уровнем дохода';
+
+    default: 
+        console.log('Ошибка');
         break;
-    case budgedDay < 0:
-        console.log(' плохим показателем. Вы — банкрот.');
-        break;
-    default :
-        console.log(' странным бюджетом, т.к мы не смогли его определить.');
 }
 
+// массивы
+// не смог разобраться как сделать через массивы
 
 
-// вывод в консол
-console.log('Наш доход за месяц равен ' + money + '₽');
-console.log(deposit);
-console.log(expenses1 + ' нам обходится в ' + amount1 + '₽');
-console.log(expenses2 + ' нам обходится в ' + amount2 + '₽');
-console.log('А на месяц у нас осталось всего ' + budgedMonth + '₽');
-console.log('Через ' + Math.ceil(+mission / +budgedMonth) + ' месяцев я добьюсь цели в ' + mission + '₽');
-console.log('Средний бюджет на день ' + budgedDay + '₽ и это является' + lvlBudget);
+// вторая часть задания
 
+namePerson = prompt('Как вас зовут?');
+message = (namePerson === 'Артем') ? 'Добро пожаловать, директор' :
+        (namePerson === 'Артём') ? 'Добро пожаловать, директор' :
+        (namePerson === 'Максим') ? 'Добро пожаловать, преподаватель' : 'Добро пожаловать, студент';
+
+
+
+console.log(message);
 

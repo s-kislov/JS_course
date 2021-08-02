@@ -5,6 +5,7 @@ let langRu = 'Понедельник, Вторник, Среда, Четверг
 let langEn = 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday';
 let namePerson ;
 let message ;
+let arrDays = {ru: langRu, en: langEn};
 
 // if
 if (lang === 'ru') {
@@ -22,15 +23,15 @@ switch (true) {
         console.log(langRu);
         break;
     default: 
-        console.log('Ошибка');
+        console.log('Ошибка/Error');
         break;
 }
 
 // массивы
-// не смог разобраться как сделать через массивы
+let daysArray = [['ru', 'en'], [arrDays.en, arrDays.ru]];
+console.log(daysArray[1][daysArray[0].indexOf(lang)]);
 
 // вторая часть задания
-
 namePerson = prompt('Как вас зовут?');
 message = (namePerson === 'Артем') ? 'Добро пожаловать, директор' :
         (namePerson === 'Артём') ? 'Добро пожаловать, директор' :
@@ -39,3 +40,5 @@ message = (namePerson === 'Артем') ? 'Добро пожаловать, ди
 
 console.log(message);
 
+
+  

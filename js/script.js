@@ -7,11 +7,10 @@ let isNumber = function (n) {
 
 let money ;
 let income ; 
-let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую'); 
+let addExpenses = []; 
 let deposit = confirm('У тебя есть депозит в банке?'); 
 let mission = 1000000; 
 let period = 12;
-let expenses = [];
 let amount ;
 let lvlBudget ;
 
